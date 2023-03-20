@@ -19,5 +19,10 @@
         "cypress"
     ],
     "rules": {
-    }
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
 }

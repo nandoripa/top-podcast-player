@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "cypress:open": "cypress open"
+    "lint:fix": "eslint --fix --ignore-path .gitignore --ext .js,.jsx ."
   },
   "devDependencies": {
     "cypress": "^12.6.0",
