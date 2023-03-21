@@ -1,5 +1,46 @@
-body{
-    font-family: arial;
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+.filter {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+
+    &__container {
+        align-items: end;
+        display: flex;
+        flex-direction: column;
+        height: 4em;
+        margin-bottom: 1.5em;
+        padding-right: 1em;
+    }
+
+    &__error {
+        color:red;
+        font-size: .9rem;
+        margin: 0;
+    }
+
+    &__results {
+        align-items: center;
+        background-color: $base-color;
+        border-radius: 0.5em;
+        color: #fff;
+        display: flex;
+        font-weight: bold;
+        height: 1.6em;
+        justify-content: center;
+        width: 2.5em;
+    }
+
+    &__box {
+        @include card-shadow;
+        height: 2em;
+        margin-left: 1.2em;
+        padding-left: 1em;
+        color: $text-color;
+    }
 }
 
 .podcastList {

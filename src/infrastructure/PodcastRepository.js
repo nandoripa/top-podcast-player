@@ -20,4 +20,9 @@ export class PodcastRepository {
       image: podcast['im:image'].at(-1).label
     }
   }
+
+  filter = (podcasts, filter) => {
+    const filteredPodcasts = podcasts.filter(podcast => podcast.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || podcast.author.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
+    return filteredPodcasts
+  }
 }
