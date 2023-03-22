@@ -6,11 +6,12 @@ export function useFilter () {
 
   useEffect(() => {
     if (!filter) {
+      setErrorMessage(null)
       return
     }
 
     if (filter.length < 3) {
-      setErrorMessage('The filter must contains at lest 3 chars')
+      setErrorMessage('The filter must contains at least 3 chars')
       return
     }
 
