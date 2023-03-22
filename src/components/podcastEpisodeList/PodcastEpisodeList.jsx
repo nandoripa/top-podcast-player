@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { parseTimeToHumanReadable } from '../../utils/DateTime'
 import styles from './PodcastEpisodeList.module.scss'
 
 export function PodcastEpisodeList ({ episodes, isLoading }) {

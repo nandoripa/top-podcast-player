@@ -1,0 +1,28 @@
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+.podcastEpisodeCard {
+    @include card-shadow;
+    width: 70%;
+
+    &__content {
+        padding: .5em 1.2em;
+    }
+
+    &__summary {
+        @include summary-text;
+    }
+
+    &__player {
+        margin-top: 1.5em;
+        width: 100%;
+    }
+
+    &__footer {
+        margin-top: 1.5em;
+    }
+
+    &__title {
+        color: $title-color;
+    }
+}

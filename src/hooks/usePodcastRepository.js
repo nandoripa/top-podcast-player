@@ -25,12 +25,12 @@ export function usePodcastRepository ({ repository, filter, podcastId }) {
     setIsLoading(true)
 
     if (topPodcastsLocalStorage) {
-      const podcasts = podcastId ? repository.getById(topPodcastsLocalStorage, podcastId) : topPodcastsLocalStorage
+      const podcasts = podcastId ? repository.getPodcastById(topPodcastsLocalStorage, podcastId) : topPodcastsLocalStorage
       setRepositoryData(podcasts)
       setIsLoading(false)
     } else {
       repository.getTopPodcasts().then((repositoryData) => {
-        const podcasts = podcastId ? repository.getById(repositoryData, podcastId) : repositoryData
+        const podcasts = podcastId ? repository.getPodcastById(repositoryData, podcastId) : repositoryData
         setRepositoryData(podcasts)
         setIsLoading(false)
         setTopPodcastLocalStorage(repositoryData)

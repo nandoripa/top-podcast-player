@@ -2,3 +2,8 @@
     border: 1px solid rgba(0,0,0,5%);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.20);
 }
+
+@mixin summary-text {
+    font-style: italic;
+    line-height: 1.5rem;
+}

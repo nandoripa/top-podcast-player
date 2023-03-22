@@ -51,8 +51,11 @@ export class PodcastRepository {
     return filteredPodcasts
   }
 
-  getById = (podcasts, podcastId) => {
-    const filteredPodcasts = podcasts.filter(podcast => podcast.id === podcastId)
-    return filteredPodcasts
+  getPodcastById = (podcasts, podcastId) => {
+    return podcasts.filter(podcast => podcast.id === podcastId)
+  }
+
+  getEpisodeById = (episodes, podcastId, episodeId) => {
+    return episodes.filter(episode => episode.id.toString() === episodeId.toString() && episode.podcastId.toString() === podcastId.toString())
   }
 }

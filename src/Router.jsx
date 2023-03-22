@@ -1,6 +1,5 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { EpisodeDetail } from './sections/episodeDetail/EpisodeDetail'
 import { Layout } from './sections/layout/Layout'
 import { PodcastDetailFactory } from './sections/podcastDetail/PodcastDetailFactory'
 import { PodcastListFactory } from './sections/postcastList/PodcastListFactory'
@@ -20,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/podcast/:podcastId/episode/:episodeId',
-        element: <EpisodeDetail />
+        element: PodcastDetailFactory.create()
       }
     ]
   }
