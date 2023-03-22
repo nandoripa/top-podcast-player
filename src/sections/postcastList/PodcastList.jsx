@@ -7,7 +7,7 @@ import styles from './PodcastList.module.scss'
 
 export function PodcastList ({ repository }) {
   const { filter, updateFilter, errorMessage } = useFilter()
-  const { repositoryData, isLoading, filterPodcasts } = usePodcastRepository(repository, filter)
+  const { repositoryData, isLoading, filterPodcasts } = usePodcastRepository({ repository, filter })
 
   const debouncedFilterPodcast = useCallback(
     debounce(filter => {

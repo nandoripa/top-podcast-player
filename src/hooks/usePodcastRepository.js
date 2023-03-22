@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
-export function usePodcastRepository (repository, filter) {
+export function usePodcastRepository ({ repository, filter, podcastId }) {
   const [repositoryData, setRepositoryData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [topPodcastsLocalStorage, setTopPodcastLocalStorage] = useLocalStorage('topPodcasts', undefined)
@@ -25,13 +25,15 @@ export function usePodcastRepository (repository, filter) {
     setIsLoading(true)
 
     if (topPodcastsLocalStorage) {
-      setRepositoryData(topPodcastsLocalStorage)
+      const podcasts = podcastId ? repository.getById(topPodcastsLocalStorage, podcastId) : topPodcastsLocalStorage
+      setRepositoryData(podcasts)
       setIsLoading(false)
     } else {
       repository.getTopPodcasts().then((repositoryData) => {
-        setRepositoryData(repositoryData)
-        setTopPodcastLocalStorage(repositoryData)
+        const podcasts = podcastId ? repository.getById(repositoryData, podcastId) : repositoryData
+        setRepositoryData(podcasts)
         setIsLoading(false)
+        setTopPodcastLocalStorage(repositoryData)
       })
     }
   }, [])

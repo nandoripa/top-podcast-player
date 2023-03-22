@@ -1,0 +1,63 @@
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+.podcastDetailCard {
+    @include card-shadow;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-around;
+    min-height: 400px;
+    padding: 1.5em;
+    width: 22%;
+
+    @media (max-width: 70em ) {
+        width: 29%;
+        margin: 2.7em 0;
+    }
+
+    @media (max-width: 50em) {
+        margin: 2.5em 0;
+        width: 43%;
+    }
+
+    @media (max-width: 30em) {
+        margin: 2.2em 0;
+        width: 100%;
+    }
+
+    &__image {
+        align-self: center;
+        border-radius: .5em;
+        width: 80%;
+    }
+
+    &__header {
+        border: 1px solid rgba(0,0,0,7%);
+        border-left: 0;
+        border-right: 0;
+        margin: 1.5em 0 1em 0;
+        padding: 1.5em 0;
+    }
+
+    &__title {
+        color: $title-color;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    &__author {
+        color: $title-color;
+        font-style: italic;
+        margin: .4em 0;
+    }
+
+    &__summaryLabel {
+        font-weight: bold;
+    }
+
+    &__summaryContent {
+        font-style: italic;
+        line-height: 1.5rem;
+    }
+}

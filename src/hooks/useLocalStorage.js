@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 function getStorageValue (key, defaultValue) {
   const item = localStorage.getItem(key)
   const itemExpire = localStorage.getItem(key + 'ExpireDate')
-  const parsedItem = JSON.parse(item)
+  const parsedItem = item && item !== 'undefined' ? JSON.parse(item) : undefined
   const parsedItemExpire = JSON.parse(itemExpire)
   const itemExpireDate = parsedItemExpire != null ? new Date(parsedItemExpire) : undefined
 

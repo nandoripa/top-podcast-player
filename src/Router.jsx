@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { EpisodeDetail } from './sections/episodeDetail/EpisodeDetail'
 import { Layout } from './sections/layout/Layout'
-import { PodcastDetail } from './sections/podcastDetail/PodcastDetail'
+import { PodcastDetailFactory } from './sections/podcastDetail/PodcastDetailFactory'
 import { PodcastListFactory } from './sections/postcastList/PodcastListFactory'
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/podcast/:podcastId/',
-        element: <PodcastDetail />
+        element: PodcastDetailFactory.create()
       },
       {
         path: '/podcast/:podcastId/episode/:episodeId',
