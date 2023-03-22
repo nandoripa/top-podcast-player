@@ -30,6 +30,10 @@
         align-self: center;
         border-radius: .5em;
         width: 80%;
+
+        & a {
+            text-align: center;
+        }
     }
 
     &__header {
@@ -41,15 +45,23 @@
     }
 
     &__title {
-        color: $title-color;
         font-weight: bold;
         margin: 0;
+
+        & a {
+            color: $title-color;
+            text-decoration: none;
+        }
     }
 
     &__author {
-        color: $title-color;
         font-style: italic;
         margin: .4em 0;
+
+        & a {
+            color: $title-color;
+            text-decoration: none;
+        }
     }
 
     &__summaryLabel {
