@@ -1,0 +1,17 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins';
+
+.app__name {
+    @include card-shadow;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding: .5rem;
+
+    & a {
+        align-items: center;
+        color:$base-color;
+        display: flex;
+        text-decoration: none;
+    }
+}

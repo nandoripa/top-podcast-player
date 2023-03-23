@@ -9,14 +9,3 @@ body{
     max-width: 1280px;
     margin: 0 auto;
 }
-
-.app__name {
-    @include card-shadow;
-    margin-bottom: 1em;
-    padding: .5rem;
-
-    & a {
-        color:$base-color;
-        text-decoration: none;
-    }
-}

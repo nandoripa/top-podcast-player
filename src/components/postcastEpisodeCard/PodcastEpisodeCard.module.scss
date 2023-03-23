@@ -20,6 +20,11 @@
 
     &__footer {
         margin-top: 1.5em;
+
+        & a {
+            color: $base-color;
+            text-decoration: none;
+        }
     }
 
     &__title {

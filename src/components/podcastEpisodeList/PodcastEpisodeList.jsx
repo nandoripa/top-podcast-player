@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useLoader } from '../../hooks/useLoader'
 import styles from './PodcastEpisodeList.module.scss'
 
-export function PodcastEpisodeList ({ episodes, isLoading }) {
+export function PodcastEpisodeList ({ episodes }) {
+  const { loaderEpisodesActive } = useLoader()
   return (
     <>
-        {isLoading
-          ? (<h2>Loading...</h2>)
-          : (
+        {!loaderEpisodesActive && (
             <div className={styles.podcastDetailEpisodes}>
                 <div className={styles.podcastDetailEpisodes__header}>
                     <span>Episodes: {episodes.length}</span>
@@ -43,7 +43,7 @@ export function PodcastEpisodeList ({ episodes, isLoading }) {
                     }
                 </div>
             </div>
-            )}
+        )}
     </>
   )
 }
