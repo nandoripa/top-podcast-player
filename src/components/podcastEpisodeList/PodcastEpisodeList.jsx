@@ -10,7 +10,7 @@ export function PodcastEpisodeList ({ episodes }) {
         {!loaderEpisodesActive && (
             <div className={styles.podcastDetailEpisodes}>
                 <div className={styles.podcastDetailEpisodes__header}>
-                    <span>Episodes: {episodes.length}</span>
+                    <span>Episodes: <span className='podcastDetailEpisodesCounter'>{episodes.length}</span></span>
                 </div>
                 <div className={styles.podcastDetailEpisodes__list}>
                     {
@@ -19,7 +19,7 @@ export function PodcastEpisodeList ({ episodes }) {
                             <p>No episodes available at this moment. Please come back later...</p>
                             )
                           : (
-                                <table cellSpacing='0' cellPadding='0'>
+                                <table className='podcastDetailEpisodesTable' cellSpacing='0' cellPadding='0'>
                                     <thead>
                                         <tr>
                                             <th className={styles.podcastDetailEpisodes__label}>Title</th>

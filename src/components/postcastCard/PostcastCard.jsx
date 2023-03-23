@@ -9,7 +9,7 @@ export function PodcastCard ({ podcast }) {
   }
 
   return (
-        <div className={styles.podcastCard} onClick={goToPodcastDetailt}>
+        <div className={`podcastCard ${styles.podcastCard}`} onClick={goToPodcastDetailt}>
             <img className={styles.podcastCard__image} src={podcast.image} alt={podcast.title} />
             <span className={styles.podcastCard__title}>{podcast.title}</span>
             <span className={styles.podcastCard__author}>{podcast.author}</span>
