@@ -17,29 +17,22 @@ export function PodcastDetail ({ repository }) {
 
   return (
     <>
-    {!loaderPodcastActive && !loaderEpisodesActive
-      ? podcast
-        ? (
-            <div className={styles.podcastDetailContainer}>
-              <PodcastDetailCard podcast={podcast}/>
-              {
-                episodeId && episodes.length === 1
-                  ? (
-                      <PodcastEpisodeCard episode={episodes[0]}/>
-                    )
-                  : (
-                  <PodcastEpisodeList episodes={episodes} />
-                    )
-              }
-            </div>
-          )
-        : (
-            <div>
-              <p>Oopppss!!! Sorry this podcast is not found</p>
-            </div>
-          )
-      : (<></>)
-  }
+    {!loaderPodcastActive && !loaderEpisodesActive && podcast &&
+      (
+        <div className={styles.podcastDetailContainer}>
+          <PodcastDetailCard podcast={podcast}/>
+          {
+            episodeId && episodes.length === 1
+              ? (
+                  <PodcastEpisodeCard episode={episodes[0]}/>
+                )
+              : (
+              <PodcastEpisodeList episodes={episodes} />
+                )
+          }
+        </div>
+      )
+    }
     </>
   )
 }

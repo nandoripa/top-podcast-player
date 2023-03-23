@@ -29,33 +29,36 @@ export function PodcastList ({ repository }) {
     debouncedFilterPodcast(newFilter)
   }
 
-  let resultMessage
-  if (!loaderPodcastActive && repositoryData.length === 0) {
-    resultMessage = filter ? `No podcasts found for ${filter}` : 'No podcasts available at this moment. Please come back later...'
+  let resultFilter
+  if (!loaderPodcastActive && repositoryData.length === 0 && filter) {
+    resultFilter = `No podcasts found for ${filter}`
   }
 
   return (
     <>
-    <div className={styles.filter__container}>
-      <div className={styles.filter}>
-        <span className={styles.filter__results} >{repositoryData.length}</span>
-        <input className={styles.filter__box} onChange={handleChangeFilter} value={filter} name='filter' placeholder='Filter podcasts...'/>
-      </div>
-      <p className={styles.filter__error}>{errorFilter}</p>
-    </div>
-      <section className={styles.podcastList}>
-        {!loaderPodcastActive && (
-          repositoryData.map((podcast) => (
-            <PodcastCard key={podcast.id} podcast={podcast}/>
-          ))
-        )}
-      </section>
-
-      {resultMessage && (
-        <div>
-          <span>{resultMessage}</span>
+          <div className={styles.filter__container}>
+          <div className={styles.filter}>
+            <span className={`filter__results ${styles.filter__results}`} >{repositoryData.length}</span>
+            <input className={styles.filter__box} onChange={handleChangeFilter} value={filter} name='filter' placeholder='Filter podcasts...'/>
+          </div>
+          <p className={styles.filter__error}>{errorFilter}</p>
         </div>
-      )}
+        {
+          !resultFilter
+            ? (
+            <section className={styles.podcastList}>
+            {!loaderPodcastActive && (
+              repositoryData.map((podcast) => (
+                <PodcastCard key={podcast.id} podcast={podcast}/>
+              ))
+            )}
+          </section>
+              )
+            : <div>
+            <span>{resultFilter}</span>
+          </div>
+        }
+
     </>
   )
 }
