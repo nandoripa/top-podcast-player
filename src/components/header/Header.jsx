@@ -13,7 +13,7 @@ export function Header () {
             <Link to='/'>Podcaster</Link>
             {(loaderPodcastActive || loaderEpisodesActive) && (
         <div>
-          <ClipLoader size='28' color='#2071b3'/>
+          <ClipLoader size='28px' color='#2071b3'/>
         </div>
             )}
         </h1>
